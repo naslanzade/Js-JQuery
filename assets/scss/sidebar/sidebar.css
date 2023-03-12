@@ -1,0 +1,49 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../../fonts/ShantellSans-LightItalic.ttf);
+}
+#navbar .navarea {
+  position: relative;
+  transition: all 0.5s;
+  height: 100vh;
+  width: 350px;
+  background-color: rgb(231, 233, 235);
+}
+#navbar .navarea .close {
+  font-size: 45px;
+  color: rgb(8, 8, 8);
+  position: absolute;
+  left: 320px;
+  top: 50px;
+  cursor: pointer;
+}
+#navbar .navarea .open {
+  font-size: 45px;
+  color: rgb(8, 8, 8);
+  position: absolute;
+  left: 320px;
+  top: 50px;
+  cursor: pointer;
+}
+#navbar .navarea .right {
+  position: absolute;
+  top: 275px;
+  left: 100px;
+}
+#navbar .navarea .right li {
+  list-style: none;
+}
+#navbar .navarea .right li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  font-size: 30px;
+  font-family: myFirstFont;
+}
+#navbar .navarea .right li a:hover {
+  color: rgb(37, 3, 211);
+  font-weight: 900;
+}
+#navbar .hide {
+  transform: translate(-300px);
+}/*# sourceMappingURL=sidebar.css.map */

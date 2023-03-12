@@ -1,0 +1,44 @@
+
+#slider {
+    .main {
+        width: 600px;
+        height: 850px;
+        position: relative;
+        top: 150px;
+
+        .img {
+
+            img {
+                position: absolute;
+                width: 100%;                
+                opacity: 0;
+                transition: all 0.5s;
+            }
+
+            .active-image {
+                opacity: 1 !important;
+            }
+        }
+
+        i {
+            position: absolute;
+            z-index: 1;
+            cursor: pointer;
+            font-size: 40px;
+            color: black;
+            top: 275px;
+            transition: all 0.5s;
+        }
+
+        .left {
+            left: 25px;
+        }
+
+        .right {
+            right: 20px;
+        }     
+     
+
+    }
+
+}

@@ -1,0 +1,30 @@
+#slider .main {
+  width: 600px;
+  height: 850px;
+  position: relative;
+  top: 150px;
+}
+#slider .main .img img {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#slider .main .img .active-image {
+  opacity: 1 !important;
+}
+#slider .main i {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  font-size: 40px;
+  color: black;
+  top: 275px;
+  transition: all 0.5s;
+}
+#slider .main .left {
+  left: 25px;
+}
+#slider .main .right {
+  right: 20px;
+}/*# sourceMappingURL=slider.css.map */
