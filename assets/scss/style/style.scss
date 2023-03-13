@@ -1,0 +1,24 @@
+
+.inputs{
+    display: flex;
+    justify-content: space-evenly;
+
+    input{
+        width: 300px;
+        text-align: center;
+        font-size: 15px;
+        font-family: cursive;
+    }
+}
+
+
+.btn-primary{
+    margin-left: 100px;
+    width: 100px;
+    font-family: cursive;
+    border: none;
+    cursor: pointer;
+}
+
+
+

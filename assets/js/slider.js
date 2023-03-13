@@ -8,7 +8,7 @@ $(".main .right").on("click",function(){
         $(activeImage).next().addClass("active-image")
     }
     else{
-       $(activeImage).parent().children().addClass("active-image")
+        $(activeImage).parent().children(0).addClass("active-image")
     }
 
     
@@ -25,10 +25,11 @@ $(".main .left").on("click",function(){
         $(activeImage).next().addClass("active-image")
     }
     else{
-        $(activeImage).parent().children().addClass("active-image")
+        $(activeImage).parent().children(3).addClass("active-image")
     }
 
 })  
+
 
 
 
