@@ -1,53 +1,57 @@
-$(function () {
+$(document).ready(function () {
 
     let students = [];
 
     if (JSON.parse(localStorage.getItem("students") != null)) {
-        students=JSON.parse(localStorage.getItem("students"));
+        students = JSON.parse(localStorage.getItem("students"));
     }
 
-    $(document).on("click", ".btn-primary", function () {
-        let student = {
-            name: $(".txtName").val(),
-            surname: $(".txtSurname").val(),
-            age: $(".age").val()
-        };
+    $(document).on("click", ".btn-success", function () {
 
-       
-        students.push(student);
+        let name = $(".txtName").val()
+        let surname = $(".txtSurname").val()
+        let age = $(".age").val()
+
+        students.push({
+            name: name,
+            surname: surname,
+            age: age
+        });
+
         localStorage.setItem("students", JSON.stringify(students));
 
-        inputTable()
+        showData()
+
+        clearForm()
     });
 
 
-    $(document).on("click",".btn-danger",function(index){       
-        students.splice(index,1);
-        localStorage.setItem("students", JSON.stringify(students));    
-        inputTable()
-    })
-
-
-
-    $(document).on("click",".btn-warning",function(index){
-        let newName=$(".txtName").val()=students[index].name;
-        let newSurname=$(".txtSurname").val()=students[index].surname;
-        let newAge=$(".age").val()=students[index].age;
-        
-
-        students[index].name=newName.val();
-        students[index].surname=newSurname.val();
-        students[index].age=newAge.val();
-
+    $(document).on("click", ".fa-trash-can", function (index) {
+        students.splice(index, 1);
         localStorage.setItem("students", JSON.stringify(students));
-        inputTable()
-
-
+        showData()
     })
- 
+
+
+
+    $(".table").on("click", ".fa-pen-to-square", function () {
+        let name = $(this).parent().parent().find(".txtName").html()
+        let surname = $(this).parent().parent().find(".txtSurname").html()
+        let age = $(this).parent().parent().find(".age").html()
+
+
+        $("#txtName").val(name)
+        $("#txtSurname").val(surname)
+        $("#age").val(age)
+        $("#submit").text("Update")
+        localStorage.setItem("students", JSON.stringify(students));
+        showData()
+        
+    })
+
 })
 
-function inputTable() {
+function showData() {
     $("tbody").html("")
     let tableHtml = $("tbody").html();
     for (const stu of JSON.parse(localStorage.getItem("students"))) {
@@ -55,25 +59,33 @@ function inputTable() {
         <td>${stu.name}</td>
         <td>${stu.surname}</td>
         <td>${stu.age}</td>
-        <td><button type="button" class="btn btn-warning my-3">Edit</button> <button type="button" class="btn btn-danger my-3">Delete</button></td>
+        <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
         </tr>`;
     }
     $("tbody").html(tableHtml)
 }
 
-inputTable()
+showData()
 
 
-
-
-
-
-
-
-
-
-
+function clearForm() {
     
+    $(".txtName").val("");
+    $(".txtSurname").val("");
+    $(".age").val("");
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

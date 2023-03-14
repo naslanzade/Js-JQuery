@@ -1,18 +1,45 @@
+body {
+  background-color: #5b7490;
+}
+
 .inputs {
   display: flex;
   justify-content: space-evenly;
 }
 .inputs input {
   width: 300px;
-  text-align: center;
   font-size: 15px;
-  font-family: cursive;
 }
 
-.btn-primary {
+#submit {
   margin-left: 100px;
   width: 100px;
   font-family: cursive;
   border: none;
+  cursor: pointer;
+}
+
+.table {
+  text-align: center;
+  width: 900px;
+  margin-left: 100px;
+}
+.table th {
+  font-family: cursive;
+}
+.table tr {
+  color: white;
+}
+
+.fa-trash-can {
+  color: red;
+  font-size: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.fa-pen-to-square {
+  font-size: 20px;
+  color: rgb(235, 212, 3);
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

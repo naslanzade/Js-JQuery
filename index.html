@@ -12,22 +12,25 @@
 
 <body>
 
-    <div class="container mt-5">
+    <div class="container my-5">
         <div class="inputs">
-            <input class="form-control txtName" type="text" placeholder="Enter Name">
-            <input class="form-control txtSurname" type="text" placeholder="Enter Surname">
-            <input class="form-control age" type="number" placeholder="Enter Age">
+            <input id="txtName" class="form-control txtName" type="text" placeholder="Enter Name">
+            <input id="txtSurname" class="form-control txtSurname" type="text" placeholder="Enter Surname">
+            <input id="age" class="form-control age" type="number" placeholder="Enter Age">
         </div>
-        <button type="button" class="btn btn-primary my-3" id="submit">Create</button>
+
+        <button type="button" class="btn btn-success my-3" id="submit">Add data</button>
         
 
-        <table class="table mt-5">
+
+
+        <table class="table table-bordered mt-5">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Surname</th>
                     <th scope="col">Age</th>
-                    <th scope="col">Options</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>

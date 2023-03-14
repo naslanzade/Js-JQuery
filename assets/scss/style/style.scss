@@ -1,24 +1,67 @@
+body{
+    background-color: #5b7490;
+}
 
-.inputs{
-    display: flex;
-    justify-content: space-evenly;
 
-    input{
-        width: 300px;
-        text-align: center;
-        font-size: 15px;
-        font-family: cursive;
+    .inputs {
+        display: flex;
+        justify-content: space-evenly;
+        
+    
+        input {
+            width: 300px;            
+            font-size: 15px;
+           
+        }
     }
-}
+    
+    
+    #submit {
+        margin-left: 100px;
+        width: 100px;
+        font-family: cursive;
+        border: none;
+        cursor: pointer;
+    }
+    
+    // #update {
+    //     margin-left: 100px;
+    //     width: 100px;
+    //     font-family: cursive;
+    //     border: none;
+    //     cursor: pointer;
+    //     display: none;
+    // }
+    
+    
+    .table {
+        text-align: center;
+        width: 900px;
+        margin-left: 100px;
+        
+        th{
+            font-family: cursive;
+        }
+       
+        tr{
+            color: white;
+        }
+              
+    }
 
 
-.btn-primary{
-    margin-left: 100px;
-    width: 100px;
-    font-family: cursive;
-    border: none;
-    cursor: pointer;
-}
+    .fa-trash-can{
+        color:red;
+        font-size: 20px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .fa-pen-to-square{
+        font-size: 20px;
+        color: rgb(235, 212, 3);
+        cursor: pointer;
+    }
 
 
 
