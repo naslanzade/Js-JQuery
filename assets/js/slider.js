@@ -3,15 +3,12 @@ $(document).ready(function(){
 
 $(".main .right").on("click",function(){
     let activeImage=$(".active-image")    
-    $(activeImage).removeClass("active-image")
-     
+    $(activeImage).removeClass("active-image")     
     if($(activeImage).next()!=null){
-        $(activeImage).next().addClass("active-image");
-       
+        $(activeImage).next().addClass("active-image");       
     } else {
-        $(activeImage).parent().children().eq(0).addClass("active-image")
+        $(activeImage).parent().children(0).addClass("active-image")
     }
-
 
 })  
 

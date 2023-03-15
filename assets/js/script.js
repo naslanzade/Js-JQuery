@@ -34,18 +34,24 @@ $(document).ready(function () {
 
 
 
-    $(".table").on("click", ".fa-pen-to-square", function () {
-        let name = $(this).parent().parent().find(".txtName").html()
-        let surname = $(this).parent().parent().find(".txtSurname").html()
-        let age = $(this).parent().parent().find(".age").html()
-
-
-        $("#txtName").val(name)
-        $("#txtSurname").val(surname)
-        $("#age").val(age)
+    $(document).on("click", ".fa-pen-to-square", function (index) {
         $("#submit").text("Update")
+
+        let name = $(".txtName").val()
+        let surname = $(".txtSurname").val()
+        let age = $(".age").val()
+
+        
+      
+        
+             
         localStorage.setItem("students", JSON.stringify(students));
-        showData()
+
+      
+        clearForm()
+
+        
+        
         
     })
 
@@ -76,6 +82,10 @@ function clearForm() {
 }
 
 
+
+function updateData(index){
+    $("#submit").text("Update")
+}
 
 
 
