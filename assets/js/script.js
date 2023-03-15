@@ -34,25 +34,29 @@ $(document).ready(function () {
 
 
 
-    $(document).on("click", ".fa-pen-to-square", function (index) {
+    $(document).on("click", ".fa-pen-to-square", function () {
+       
         $("#submit").text("Update")
 
-        let name = $(".txtName").val()
-        let surname = $(".txtSurname").val()
-        let age = $(".age").val()
+        let students = JSON.parse(localStorage.getItem("students"))       
+       
+        $(document).on("click", "#submit", function () {
 
-        
-      
-        
-             
-        localStorage.setItem("students", JSON.stringify(students));
+            let newStu = {
+                name: $(".txtName").val(),
+                surname: $(".txtSurname").val(),
+                age: $(".age").val()
+            }
 
-      
-        clearForm()
+            students.push(newStu)
+            localStorage.setItem("students", JSON.stringify(students));
+            showData()
+            clearForm()
 
-        
-        
-        
+        })
+
+       
+
     })
 
 })
@@ -75,7 +79,7 @@ showData()
 
 
 function clearForm() {
-    
+
     $(".txtName").val("");
     $(".txtSurname").val("");
     $(".age").val("");
@@ -83,9 +87,7 @@ function clearForm() {
 
 
 
-function updateData(index){
-    $("#submit").text("Update")
-}
+
 
 
 
