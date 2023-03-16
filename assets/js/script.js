@@ -2,9 +2,8 @@ $(document).ready(function () {
 
     let students = [];
 
-    if (JSON.parse(localStorage.getItem("students") != null)) {
-        students = JSON.parse(localStorage.getItem("students"));
-    }
+    students = JSON.parse(localStorage.getItem("students"));
+
 
     $(document).on("click", ".btn-success", function () {
 
@@ -16,6 +15,7 @@ $(document).ready(function () {
             name: name,
             surname: surname,
             age: age
+
         });
 
         localStorage.setItem("students", JSON.stringify(students));
@@ -35,28 +35,34 @@ $(document).ready(function () {
 
 
     $(document).on("click", ".fa-pen-to-square", function () {
-       
+
         $("#submit").text("Update")
 
-        let students = JSON.parse(localStorage.getItem("students"))       
-       
         $(document).on("click", "#submit", function () {
+            students = JSON.parse(localStorage.getItem("students"));
+            let name=$(this).prev().children().eq(0).text();
+            let surname=$(this).prev().children().eq(1);
+            let age=$(this).prev().children().eq(2);
 
             let newStu = {
-                name: $(".txtName").val(),
-                surname: $(".txtSurname").val(),
-                age: $(".age").val()
+               newname: $(".txtName").val(),
+                newsurname: $(".txtSurname").val(),
+                newage: $(".age").val()
             }
 
-            students.push(newStu)
+            name=newStu.newname;
+            surname=newStu.newsurname;
+            age=newStu.newage
+
+            students.push(newStu);
+
             localStorage.setItem("students", JSON.stringify(students));
             showData()
             clearForm()
 
+            $("#submit").text("Add data")
+
         })
-
-       
-
     })
 
 })
@@ -73,6 +79,8 @@ function showData() {
         </tr>`;
     }
     $("tbody").html(tableHtml)
+
+    
 }
 
 showData()
@@ -84,6 +92,9 @@ function clearForm() {
     $(".txtSurname").val("");
     $(".age").val("");
 }
+
+
+
 
 
 
