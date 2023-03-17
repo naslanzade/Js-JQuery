@@ -40,19 +40,15 @@ $(document).ready(function () {
 
         $(document).on("click", "#submit", function () {
             students = JSON.parse(localStorage.getItem("students"));
-            let name=$(this).prev().children().eq(0).text();
-            let surname=$(this).prev().children().eq(1);
-            let age=$(this).prev().children().eq(2);
+            let name=$(this).prev().children().eq(0).val();
+            let surname=$(this).prev().children().eq(1).val();
+            let age=$(this).prev().children().eq(2).val();
 
             let newStu = {
-               newname: $(".txtName").val(),
-                newsurname: $(".txtSurname").val(),
-                newage: $(".age").val()
+               newname: $(".txtName").val(name),
+                newsurname: $(".txtSurname").val(surname),
+                newage: $(".age").val(age)
             }
-
-            name=newStu.newname;
-            surname=newStu.newsurname;
-            age=newStu.newage
 
             students.push(newStu);
 
